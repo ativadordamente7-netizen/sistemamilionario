@@ -1,0 +1,6 @@
+{
+  "name": "Infinity Million - Sistema de Execução com IA",
+  "description": "Landing page oficial do Infinity Million com entrada em portal com flash de luz azul celeste, VSL com cronômetro sintonizado, popups de compradores a cada 2 minutos e sistema milionário de inteligência artificial.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
