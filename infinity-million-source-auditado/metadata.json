@@ -1,0 +1,6 @@
+{
+  "name": "Infinity Million",
+  "description": "Ative o Infinity Million. Copie e cole, ative o sistema e fature até 100 mil em 45 dias.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

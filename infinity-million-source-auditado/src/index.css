@@ -1,0 +1,208 @@
+@import "tailwindcss";
+
+@theme {
+  --font-cinzel: 'Cinzel', serif;
+  --font-outfit: 'Outfit', sans-serif;
+  --font-jakarta: 'Plus Jakarta Sans', sans-serif;
+  --color-pearl-50: #FFFFFF;
+  --color-pearl-100: #FAF8F5;
+  --color-pearl-200: #F4F0E8;
+  --color-pearl-300: #EAE4D6;
+  --color-gold-light: #E7CF9B;
+  --color-gold: #C8A45D;
+  --color-gold-dark: #A87924;
+}
+
+@keyframes shimmer {
+  0% {
+    transform: translateX(-150%) skewX(-20deg);
+  }
+  50%, 100% {
+    transform: translateX(200%) skewX(-20deg);
+  }
+}
+
+@keyframes pulseGlow {
+  0%, 100% {
+    opacity: 0.45;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.85;
+    transform: scale(1.05);
+  }
+}
+
+@keyframes floatSlow {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+}
+
+/* Micro-animação de escala suave com efeito "pop" para ativação do CTA */
+@keyframes ctaPop {
+  0% {
+    opacity: 0;
+    transform: scale(0.82);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.07);
+    box-shadow: 0 0 35px rgba(200, 164, 93, 0.55), 0 15px 40px rgba(200, 164, 93, 0.35);
+  }
+  75% {
+    transform: scale(0.98);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes ctaAttentionPulse {
+  0%, 100% {
+    transform: scale(1);
+    box-shadow: 0 8px 25px rgba(200, 164, 93, 0.28), inset 0 1px 1px rgba(255, 255, 255, 0.9);
+  }
+  50% {
+    transform: scale(1.025);
+    box-shadow: 0 12px 35px rgba(200, 164, 93, 0.42), inset 0 1px 1px rgba(255, 255, 255, 0.95);
+  }
+}
+
+/* Animação rotativa contínua da borda brilhante (Glow Beam) */
+@keyframes borderGlowSpin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Pulsação fluida da aura de iluminação ao redor do botão */
+@keyframes glowPulse {
+  0%, 100% {
+    opacity: 0.5;
+    transform: scale(0.98);
+    filter: blur(14px);
+  }
+  50% {
+    opacity: 0.95;
+    transform: scale(1.05);
+    filter: blur(22px);
+  }
+}
+
+.animate-border-glow {
+  animation: borderGlowSpin 3.5s linear infinite;
+}
+
+.animate-aura-glow {
+  animation: glowPulse 2.8s ease-in-out infinite;
+}
+
+.animate-cta-pop-loop {
+  animation: ctaPop 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) forwards, ctaAttentionPulse 3.5s ease-in-out 0.9s infinite;
+}
+
+.animate-shimmer {
+  animation: shimmer 4s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+}
+
+.animate-pulse-glow {
+  animation: pulseGlow 3.5s ease-in-out infinite;
+}
+
+.animate-float-slow {
+  animation: floatSlow 6s ease-in-out infinite;
+}
+
+/* Metallic gold text gradient */
+.text-metallic-gold {
+  background: linear-gradient(135deg, #F0DBA5 0%, #C8A45D 45%, #9E7422 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.text-metallic-silver {
+  background: linear-gradient(135deg, #FFFFFF 0%, #E8E5DD 45%, #B5B0A2 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Efeito de distorção de luz e bloom nas bordas do portal ao clicar */
+@keyframes portalEdgeBloom {
+  0% {
+    opacity: 0.95;
+    filter: brightness(1.8) contrast(1.1);
+  }
+  40% {
+    opacity: 0.8;
+    filter: brightness(1.4) contrast(1.05);
+  }
+  100% {
+    opacity: 0;
+    filter: brightness(1);
+  }
+}
+
+@keyframes shockwaveExpand {
+  0% {
+    transform: translate(-50%, -50%) scale(0.15);
+    opacity: 1;
+  }
+  60% {
+    opacity: 0.8;
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(3.2);
+    opacity: 0;
+  }
+}
+
+@keyframes chromaticPulse {
+  0%, 100% {
+    filter: drop-shadow(0 0 15px rgba(56, 189, 248, 0.4)) drop-shadow(0 0 30px rgba(253, 224, 71, 0.2));
+  }
+  50% {
+    filter: drop-shadow(0 0 35px rgba(56, 189, 248, 0.9)) drop-shadow(0 0 60px rgba(253, 224, 71, 0.6));
+  }
+}
+
+.animate-edge-bloom {
+  animation: portalEdgeBloom 0.7s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-shockwave {
+  animation: shockwaveExpand 0.75s cubic-bezier(0.2, 0.9, 0.3, 1) forwards;
+}
+
+/* Pearl glass container */
+.pearl-card {
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.92) 0%, rgba(248, 246, 240, 0.82) 100%);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(200, 164, 93, 0.22);
+  box-shadow: 
+    0 10px 40px -10px rgba(168, 121, 36, 0.08),
+    0 20px 60px -15px rgba(0, 0, 0, 0.04),
+    inset 0 1px 1px 0 rgba(255, 255, 255, 0.95);
+}
+
+/* Pearl VSL Device Container */
+.vsl-device-frame {
+  position: relative;
+  background: linear-gradient(160deg, #FFFFFF 0%, #F5F1E9 50%, #ECE6D8 100%);
+  padding: 5px;
+  border-radius: 26px;
+  border: 1px solid rgba(200, 164, 93, 0.35);
+  box-shadow:
+    0 0 0 1px rgba(255, 255, 255, 0.9),
+    0 15px 35px -5px rgba(200, 164, 93, 0.15),
+    0 35px 80px -10px rgba(40, 30, 10, 0.12),
+    inset 0 0 20px rgba(255, 255, 255, 0.8);
+}
